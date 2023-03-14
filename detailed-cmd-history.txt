@@ -1,0 +1,136 @@
+    1  sudo apt update 
+    2  sudo apt list --upgradable
+    3  sudo su -
+    4  ssh-keygen  -t rsa 
+    5  cd .ssh
+    6  ls
+    7  ip a
+    8  ssh 10.0.0.5
+    9  ssh 10.0.0.6
+   10  ssh-copy-id -i /home/jeetu/.ssh/id_rsa.pub 10.0.0.5
+   11  ssh-copy-id -i /home/jeetu/.ssh/id_rsa.pub 10.0.0.6
+   12  cd
+   13  cd -
+   14  ssh 10.0.0.5
+   15  ssh 10.0.0.6
+   16  cd
+   17  sudo apt install git
+   18  whic git
+   19  which git
+   20  cd -
+   21  cat id_rsa.pub 
+   22  git@github.com:jitendrastomar5593/ansible_demo.git
+   23  cd
+   24  git@github.com:jitendrastomar5593/ansible_demo.git
+   25  sudo git@github.com:jitendrastomar5593/ansible_demo.git
+   26  git clone git@github.com:jitendrastomar5593/ansible_demo.git
+   27  ls
+   28  cd ansible_demo/
+   29  ls
+   30  cat README.md 
+   31  git config --global user.name "Jeetu"
+   32  git config --global user.email "jitendrastomar5593@gmail.com"
+   33  cat ~/.gitconfig 
+   34  ls
+   35  vim README.md 
+   36  git status
+   37  git diff
+   38  git add README.md 
+   39  git status
+   40  git commit -m "first commit"
+   41  git push origin master
+   42  git push -u origin master
+   43  git status
+   44  git push
+   45  history > basic-hist.txt
+   46  mv basic-hist.txt ~
+   47  ls ~
+   48  apt update
+   49  sudo apt update
+   50  sudo apt install ansible
+   51  cd
+   52  ls
+   53  cd ansible_demo/
+   54  ls
+   55  vim inventory
+   56  git status
+   57  git add inventory 
+   58  git status
+   59  git commit -m "inventory added, multiple hosts added"
+   60  vim inventory 
+   61  git status
+   62  git add inventory 
+   63  git status
+   64  git commit -m "inventory added, 2 hosts added"
+   65  git push
+   66  ansible all --key-file ~/.ssh/id_rsa -i inventory -m ping
+   67  history > ~/basic-hist1.txt 
+   68  which ansible
+   69  cd ansible_demo/
+   70  ls
+   71  ansible all --key-file ~/.ssh/id_rsa -i inventory -m ping
+   72  vim ansible.cfg
+   73  ls
+   74  ls /etc/ansible/
+   75  ansible all -m ping
+   76  vim ansible.cfg
+   77  ls ~/.ssh/
+   78  vim ansible.cfg
+   79  ansible all -m ping
+   80  ansible all --list-hosts
+   81  ansible all -m gather_facts
+   82  ansible all -m gather_facts --limit 10.0.0.5
+   83  git status
+   84  git add ansible.cfg 
+   85  git status
+   86  git commit -m "1st version of CFG"
+   87  git push 
+   88  ansible all -m gather_facts
+   89  apt update
+   90  ansible all -m apt
+   91  ansible all -m apt -a update_cache=true
+   92  ansible all -m apt -a update_cache=true --become --ask-become-pass
+   93  ansible all -m apt -a name=vim-nox --become --ask-become-pass
+   94  ansible all -m apt -a name=tmux --become --ask-become-pass
+   95  ansible all -m apt -a "upgrade=dist" --become --ask-become-pass
+   96  #writing a playbook
+   97  vim install_apache.yml
+   98  ansible-playbook --ask-become-pass install_apache.yml 
+   99  vim install_apache.yml
+  100  ansible-playbook --ask-become-pass install_apache.yml 
+  101  vim install_apache.yml
+  102  ansible-playbook --ask-become-pass install_apache.yml 
+  103  vim install_apache.yml
+  104  ansible-playbook --ask-become-pass install_apache.yml 
+  105  cp install_apache.yml remove_apache.yml 
+  106  vim remove_apache.yml 
+  107  ansible-playbook --ask-become-pass remove_apache.yml 
+  108  vim remove_apache.yml 
+  109  ansible-playbook --ask-become-pass remove_apache.yml 
+  110  git status 
+  111  git add install_apache.yml remove_apache.yml 
+  112  git status 
+  113  git push 
+  114  git add .
+  115  git status 
+  116  git commit -m "added install/remove playbooks for apache"
+  117  git push origin master
+  118  git push 
+  119  #using WHEN in playbooks
+  120  ls
+  121  git pull
+  122  vim inventory 
+  123  ansible-playbook --ask-become-pass install_apache.yml 
+  124  ssh-copy-id 10.0.0.7
+  125  ssh 10.0.0.8
+  126  ansible-playbook --ask-become-pass install_apache.yml 
+  127  vim inventory 
+  128  ssh-copy-id 10.0.0.8
+  129  ssh '10.0.0.8'
+  130  ansible-playbook --ask-become-pass install_apache.yml 
+  131  vim install_apache.yml 
+  132  ansible-playbook --ask-become-pass install_apache.yml 
+  133  vim install_apache.yml 
+  134  history 
+  135  ls
+  136  history > basic-hist2.txt
